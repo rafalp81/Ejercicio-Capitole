@@ -1,0 +1,73 @@
+swagger: "2.0"
+info:
+  description: "API Ejercicio Capitole para el proyecto de Inditex"
+  version: "1.0.0"
+  title: "API Capitole"
+  contact:
+    email: "rafalp81@gmail.com"
+host: "localhost"
+basePath: "/v1"
+schemes:
+- "https"
+- "http"
+paths:
+  /prices:
+    get:
+      summary: "Obtiene el precio según los parámetros pasados"
+      operationId: "getPrices"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "fecha"
+        in: "query"
+        description: "Fecha de aplicación"
+        required: true
+        type: "string"
+        format: "date-time"
+      - name: "idProducto"
+        in: "query"
+        description: "Identificador del producto"
+        required: true
+        type: "integer"
+        format: "int32"
+      - name: "idCadena"
+        in: "query"
+        description: "Identificador de la cadena"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Price"
+        "404":
+          description: "Not found"
+
+definitions:
+  Price:
+    type: "object"
+    properties:
+      brandId:
+        type: "integer"
+        format: "int32"
+      startDate:
+        type: "string"
+        format: "date-time"
+      endDate:
+        type: "string"
+        format: "date-time"
+      priceList:
+        type: "integer"
+        format: "int32"
+      productId:
+        type: "string"
+      priority:
+        type: "integer"
+        format: "int32"
+      price:
+        type: "number"
+        format: "float"
+      curr:
+        type: "string"
+  
