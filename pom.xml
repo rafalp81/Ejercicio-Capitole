@@ -68,13 +68,24 @@
 			<plugin>
 				<groupId>io.swagger</groupId>
 				<artifactId>swagger-codegen-maven-plugin</artifactId>
-				<version>2.3.1</version>
+				<version>2.4.20</version>
 				<executions>
+					<!-- <execution> <goals> <goal>generate</goal> </goals> <configuration> 
+						<inputSpec>${project.basedir}/src/main/resources/swagger/api.yaml</inputSpec> 
+						<language>spring</language> <apiPackage>com.capitole.ejercicio.restzara.web.api</apiPackage> 
+						<modelPackage>com.capitole.ejercicio.restzara.web.api.model</modelPackage> 
+						<generateSupportingFiles>false</generateSupportingFiles> <configOptions> 
+						<interfaceOnly>true</interfaceOnly> <java8>true</java8> </configOptions> 
+						<typeMappings> <typeMapping>OffsetDateTime=Instant</typeMapping> </typeMappings> 
+						<importMappings> <importMapping>Instant=java.time.Instant</importMapping> 
+						</importMappings> </configuration> </execution> -->
 					<execution>
+						<id>swagger-path-specs.definitions</id>
 						<goals>
 							<goal>generate</goal>
 						</goals>
 						<configuration>
+							<verbose>true</verbose>
 							<inputSpec>${project.basedir}/src/main/resources/swagger/api.yaml</inputSpec>
 							<language>spring</language>
 							<apiPackage>com.capitole.ejercicio.restzara.web.api</apiPackage>
@@ -82,14 +93,14 @@
 							<generateSupportingFiles>false</generateSupportingFiles>
 							<configOptions>
 								<interfaceOnly>true</interfaceOnly>
-								<java8>true</java8>
+								<dateLibrary>java8-localdatetime</dateLibrary>
 							</configOptions>
-							<typeMappings>
+					<!-- 		<typeMappings>
 								<typeMapping>OffsetDateTime=LocalDateTime</typeMapping>
 							</typeMappings>
 							<importMappings>
-								<importMapping>java.time.OffsetDateTime=java.time.LocalDateTime</importMapping>
-							</importMappings>
+								<importMapping>LoccalDateTime=java.time.LocalDateTime</importMapping>
+							</importMappings> -->
 						</configuration>
 					</execution>
 				</executions>

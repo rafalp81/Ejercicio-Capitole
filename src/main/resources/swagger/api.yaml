@@ -29,13 +29,13 @@ paths:
         in: "query"
         description: "Identificador del producto"
         required: true
-        type: "integer"
-        format: "int32"
+        type: "string"
       - name: "idCadena"
         in: "query"
         description: "Identificador de la cadena"
         required: true
-        type: "string"
+        type: "integer"
+        format: "int32"
       responses:
         "200":
           description: "Successful operation"
