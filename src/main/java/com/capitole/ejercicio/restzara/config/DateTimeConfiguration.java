@@ -12,7 +12,7 @@ import org.springframework.format.support.FormattingConversionService;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @Configuration
-public class DateTimeConfig extends WebMvcConfigurationSupport {
+public class DateTimeConfiguration extends WebMvcConfigurationSupport {
 
     @Bean
     @Override
@@ -30,4 +30,5 @@ public class DateTimeConfig extends WebMvcConfigurationSupport {
 
         return conversionService;
     }
+    
 }

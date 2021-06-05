@@ -54,7 +54,14 @@
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
-			<version>2.0.1.Final</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>4.3</version>
+			<scope>test</scope>
 		</dependency>
 
 	</dependencies>
@@ -70,15 +77,6 @@
 				<artifactId>swagger-codegen-maven-plugin</artifactId>
 				<version>2.4.20</version>
 				<executions>
-					<!-- <execution> <goals> <goal>generate</goal> </goals> <configuration> 
-						<inputSpec>${project.basedir}/src/main/resources/swagger/api.yaml</inputSpec> 
-						<language>spring</language> <apiPackage>com.capitole.ejercicio.restzara.web.api</apiPackage> 
-						<modelPackage>com.capitole.ejercicio.restzara.web.api.model</modelPackage> 
-						<generateSupportingFiles>false</generateSupportingFiles> <configOptions> 
-						<interfaceOnly>true</interfaceOnly> <java8>true</java8> </configOptions> 
-						<typeMappings> <typeMapping>OffsetDateTime=Instant</typeMapping> </typeMappings> 
-						<importMappings> <importMapping>Instant=java.time.Instant</importMapping> 
-						</importMappings> </configuration> </execution> -->
 					<execution>
 						<id>swagger-path-specs.definitions</id>
 						<goals>
@@ -95,12 +93,9 @@
 								<interfaceOnly>true</interfaceOnly>
 								<dateLibrary>java8-localdatetime</dateLibrary>
 							</configOptions>
-					<!-- 		<typeMappings>
-								<typeMapping>OffsetDateTime=LocalDateTime</typeMapping>
-							</typeMappings>
-							<importMappings>
-								<importMapping>LoccalDateTime=java.time.LocalDateTime</importMapping>
-							</importMappings> -->
+							<!-- <typeMappings> <typeMapping>OffsetDateTime=LocalDateTime</typeMapping> 
+								</typeMappings> <importMappings> <importMapping>LoccalDateTime=java.time.LocalDateTime</importMapping> 
+								</importMappings> -->
 						</configuration>
 					</execution>
 				</executions>
